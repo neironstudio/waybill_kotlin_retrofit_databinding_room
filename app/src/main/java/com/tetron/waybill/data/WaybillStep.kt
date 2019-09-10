@@ -1,0 +1,17 @@
+package com.tetron.waybill.data
+
+enum class WaybillStep {
+    PRINT,
+    APPROVAL_SELECTION,
+    PRINT_COMPLETED_WAYBILL,
+    DEPARTURE_TO_CUSTOMER,
+    BEGINNING_OF_WORK,
+    WORK_ON_CUSTOMER_DOC,
+    TIME_SPENT,
+    CUSTOMER_MARK,
+    RETURN_TO_BASE,
+    FUEL,
+    PERFORMANCE_INDICATORS,
+    WAYBILL_CLOSURE,
+    UNKNOWN
+}

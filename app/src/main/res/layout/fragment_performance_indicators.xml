@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="PerformanceIndicatorsFragmentBinding">
+
+        <variable
+                name="currentWaybillViewModel"
+                type="com.tetron.waybill.viewmodel.CurrentWaybillViewModel"/>
+
+        <variable
+                name="performanceIndicatorsViewModel"
+                type="com.tetron.waybill.viewmodel.PerformanceIndicatorsViewModel"/>
+
+    </data>
+
+    <LinearLayout
+            android:id="@+id/llContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/colorBackgroundLight">
+
+        <ImageView
+                android:id="@+id/ivStageWork"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:src="@drawable/ic_stage_delivery"
+                android:scaleType="fitCenter"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:layout_gravity="center_horizontal"
+                tools:ignore="ContentDescription"/>
+
+        <TextView
+                android:id="@+id/tvPerformanceIndicatorsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:text="@string/tv_performance_indicators_title"
+                android:textSize="@dimen/title_text_size"
+                android:textStyle="bold"
+                android:textColor="@color/colorTextDark"
+                android:gravity="center_horizontal"
+                android:textAllCaps="true"/>
+
+        <TextView
+                android:id="@+id/tvWorkOnWaybillSection"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="@string/tv_work_on_customer_doc_title"
+                android:layout_marginTop="@dimen/default_margin"
+                android:padding="@dimen/default_padding"
+                android:textSize="@dimen/subtitle_text_size"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:textColor="@color/colorBackgroundLight"
+                android:background="@color/colorAccent"
+                android:gravity="center_vertical"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clDateToStartWorkContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin">
+
+            <TextView
+                    android:id="@+id/tvDateToStartWorkLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_date_to_start_work_label"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/label_text_size"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                    android:id="@+id/tvDateToStartWork"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="27.06.2019"
+                    android:textSize="@dimen/field_text_size"
+                    android:textColor="@color/colorTextLight"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDateToStartWorkLabel"
+                    app:layout_constraintEnd_toStartOf="@+id/btnEditDateToStartWork"/>
+
+            <ImageView
+                    android:id="@+id/btnEditDateToStartWork"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:src="@drawable/ic_edit"
+                    tools:ignore="ContentDescription"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvDateToStartWork"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvDateToStartWork"/>
+
+            <View
+                    android:background="@color/colorPrimaryLight"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/line_view_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDateToStartWork"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clTimeToStartWorkContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin">
+
+            <TextView
+                    android:id="@+id/tvTimeToStartWorkLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_time_to_start_work_label"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/label_text_size"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                    android:id="@+id/tvTimeToStartWork"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="09:00"
+                    android:textSize="@dimen/field_text_size"
+                    android:textColor="@color/colorTextLight"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTimeToStartWorkLabel"
+                    app:layout_constraintEnd_toStartOf="@+id/btnEditTimeToStartWork"/>
+
+            <ImageView
+                    android:id="@+id/btnEditTimeToStartWork"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_edit"
+                    tools:ignore="ContentDescription"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvTimeToStartWork"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvTimeToStartWork"/>
+
+            <View
+                    android:background="@color/colorPrimaryLight"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/line_view_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTimeToStartWork"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clEndDateContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin">
+
+            <TextView
+                    android:id="@+id/tvEndDateLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_date_to_end_work_label"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/label_text_size"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                    android:id="@+id/tvEndDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="29.06.2019"
+                    android:textSize="@dimen/field_text_size"
+                    android:textColor="@color/colorTextLight"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEndDateLabel"
+                    app:layout_constraintEnd_toStartOf="@+id/btnEndDate"/>
+
+            <ImageView
+                    android:id="@+id/btnEndDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_edit"
+                    tools:ignore="ContentDescription"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvEndDate"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvEndDate"/>
+
+            <View
+                    android:background="@color/colorPrimaryLight"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/line_view_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEndDate"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clEndTimeContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin">
+
+            <TextView
+                    android:id="@+id/tvEndTimeLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_time_to_end_work_label"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/label_text_size"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                    android:id="@+id/tvEndTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="12:00"
+                    android:textSize="@dimen/field_text_size"
+                    android:textColor="@color/colorTextLight"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEndTimeLabel"
+                    app:layout_constraintEnd_toStartOf="@+id/btnEndTime"/>
+
+            <ImageView
+                    android:id="@+id/btnEndTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_edit"
+                    tools:ignore="ContentDescription"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvEndTime"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvEndTime"/>
+
+            <View
+                    android:background="@color/colorPrimaryLight"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/line_view_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEndTime"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+                android:id="@+id/tvOdometerDepartureLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_odometer_departure_label"
+                android:textStyle="bold"
+                android:textSize="@dimen/label_text_size"
+                android:textColor="@color/colorTextDark"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin"/>
+
+        <TextView
+                android:id="@+id/tvOdometerDeparture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="000000"
+                android:textSize="@dimen/field_text_size"
+                android:textColor="@color/colorTextLight"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin"/>
+
+        <View
+                android:background="@color/colorTextLight"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/line_view_margin"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clRunOnWaybillContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin">
+
+            <TextView
+                    android:id="@+id/tvRunOnWaybillLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_run_on_waybill_label"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/label_text_size"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                    android:id="@+id/tvRunOnWaybill"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="300"
+                    android:textSize="@dimen/field_text_size"
+                    android:textColor="@color/colorTextLight"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvRunOnWaybillLabel"
+                    app:layout_constraintEnd_toStartOf="@+id/btnEditRunOnWaybill"/>
+
+            <ImageView
+                    android:id="@+id/btnEditRunOnWaybill"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_edit"
+                    tools:ignore="ContentDescription"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvRunOnWaybill"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvRunOnWaybill"/>
+
+            <View
+                    android:background="@color/colorPrimaryLight"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/line_view_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvRunOnWaybill"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+                android:id="@+id/tvOdometerArrivalLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_odometer_arrival_label"
+                android:textSize="@dimen/label_text_size"
+                android:textStyle="bold"
+                android:textColor="@color/colorTextDark"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin"/>
+
+        <TextView
+                android:id="@+id/tvOdometerArrival"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="000000"
+                android:textSize="@dimen/field_text_size"
+                android:textColor="@color/colorTextLight"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin"/>
+
+        <View
+                android:background="@color/colorTextLight"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/line_view_margin"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        <Button
+                android:id="@+id/btnCloseWaybill"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:enabled="true"
+                android:layout_margin="@dimen/default_margin"
+                android:text="@string/btn_close_waybill"
+                android:textColor="@color/colorBackgroundLight"
+                android:textSize="@dimen/button_text_size"
+                android:background="@drawable/button_accept_enabled"/>
+
+    </LinearLayout>
+
+
+</layout>

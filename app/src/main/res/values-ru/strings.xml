@@ -1,0 +1,188 @@
+<resources>
+    <string name="app_name">ЭПЛ</string>
+    <string name="app_title_back">Назад</string>
+    <!-- Strings related to login -->
+    <string name="et_hint_username">Имя пользователя</string>
+    <string name="et_hint_password">Пароль</string>
+    <string name="btn_sign_in">Войти</string>
+    <string name="msg_welcome">"Добро пожаловать!"</string>
+    <string name="err_invalid_username">Имя пользователя должно быть больше 1 символа</string>
+    <string name="err_invalid_password">Пароль должен содержать больше 5 символов</string>
+    <string name="err_login_failed">"Ошибка входа"</string>
+    <!-- Strings related to subsystem selection -->
+    <string name="btn_current_waybill">Текущий путевой лист</string>
+    <string name="btn_logout">Выход из аккаунта</string>
+    <!-- Strings related to bottom navigation -->
+    <string name="lbl_current_waybill_short">ПЛ</string>
+    <string name="lbl_info">Информация</string>
+    <string name="lbl_photo">Фото</string>
+    <string name="lbl_force_majeure">Форс-мажор</string>
+    <!-- Strings related to current waybill -->
+    <string name="tv_waybill_number">Путевой лист №%1$s</string>
+    <string name="tv_waybill_status">Cоздан</string>
+    <!-- Strings related to print fragment -->
+    <string name="btn_print">Печать</string>
+    <string name="tv_waybill_print_header">Необходима печать</string>
+    <string name="tv_waybill_print_description">Для того чтобы приступить к первому этапу движения ПЛ, напечатайте ПЛ.
+    </string>
+    <string name="tv_completed_waybill_print_header">Повторная печать</string>
+    <string name="tv_completed_waybill_print_description">Для того чтобы приступить ко второму этапу движения ПЛ, напечатайте ПЛ.</string>
+    <!-- Strings related to print confirmation dialog -->
+    <string name="tv_dialog_print_confirmation_title">Статус печати</string>
+    <string name="tv_dialog_print_confirmation_message">Печать прошла успешно?</string>
+    <string name="btn_repeat_print">Повторить печать</string>
+    <string name="btn_yes">Да</string>
+    <string name="btn_no">Нет</string>
+    <string name="btn_cancel">Отмена</string>
+    <!-- Strings related to Approve mark fragment -->
+    <string name="tv_can_do">В данный момент вы можете пройти:</string>
+    <string name="btn_get">Получить</string>
+    <string name="btn_check_pin">Проверить</string>
+    <string name="et_hint_pin">Пин-код работника</string>
+    <string name="tv_label_date">Дата</string>
+    <string name="tv_label_time">Время</string>
+    <string name="tv_mark_status">Не получена</string>
+    <string name="tv_label_medical_controller_mark">Отметка медицинского сотрудника</string>
+    <string name="tv_label_technical_controller_mark">Отметка контролёра ТСА</string>
+    <string name="tv_medical_employee_name_label">Мед. работник:&#160;</string>
+    <string name="tv_technical_employee_name_label">Контролёр ТСА:&#160;</string>
+    <string name="err_invalid_pin_mask">Пин-код должен состоять из 4 цифр</string>
+    <string name="err_invalid_pin">Неверный Пин-код</string>
+    <!-- Strings related to Departure to the customer fragment -->
+    <string name="tv_departure_to_customer_title">Выезд к заказчику</string>
+    <string name="tv_departure_to_customer_description">Чтобы подтвердить выезд к заказчику - нажмите кнопку
+        \"Выехал\"
+    </string>
+    <string name="btn_depart">Выехал</string>
+    <!-- Strings related to Departure to the customer fragment -->
+    <string name="tv_beginning_of_work_title">Начало работы</string>
+    <string name="tv_beginning_of_work_description">Вы подтвердили выезд к заказчику. По прибытии нажмите кнопку \"Приехал
+        к заказчику\".
+    </string>
+    <string name="btn_get_started">Приехал к заказчику</string>
+    <!-- Strings related to Work on customer doc fragment -->
+    <string name="tv_work_on_customer_doc_title">Работа по талону заказчика</string>
+    <string name="tv_pause_work">Приостановить работу</string>
+    <string name="tv_finish_work">Закончить работу</string>
+    <string name="tv_dialog_finish_work_confirmation_title">Закончить работу?</string>
+    <string name="tv_dialog_finish_work_confirmation_message">Вы уверены, что хотите закончить работу?</string>
+    <!-- Strings related to Customer mark fragment -->
+    <string name="tv_customer_mark_title">Отметка заказчика</string>
+    <string name="tv_customer_name_label">Наименование заказчика</string>
+    <string name="tv_contact_person_position_label">Должность ответственного сотрудника</string>
+    <string name="tv_customer_full_name_label">ФИО ответственного сотрудника</string>
+    <string name="tv_date_and_time_of_signature_label">Дата и время подписания</string>
+    <string name="tv_odometer_arrival_to_customer_label">Одометр прибытия к заказчику по ТЗ</string>
+    <string name="tv_odometer_departure_from_customer_label">Одометр убытия от заказчика по ТЗ</string>
+    <string name="tv_date_to_start_work_label">Дата начала работы:</string>
+    <string name="tv_time_to_start_work_label">Время начала работы:</string>
+    <string name="tv_date_to_end_work_label">Дата окончания работы:</string>
+    <string name="tv_time_to_end_work_label">Время окончания работы:</string>
+    <string name="tv_confirmed_and_signed_hours_label">Количество подтвержденных и подписанных часов</string>
+    <string name="tv_machine_kilometers_label">Количество машино-километров к подписанию</string>
+    <string name="tv_travel_time_label">Время в пути</string>
+    <string name="btn_edit">Редактировать</string>
+    <string name="btn_subscribe">Подписать</string>
+    <string name="tv_additional_equipment_working_time_label">Время работы доп. оборудования</string>
+    <string name="et_hint_kilometers">Километры</string>
+    <string name="et_hint_hours">Часы</string>
+    <string name="et_hint_minutes">Минуты</string>
+    <string name="tv_trailer_was_used">Работа производилась с прицепом</string>
+    <string name="err_odometer_interval">Значение должно быть между 0 и 999999</string>
+    <string name="err_odometer_arrival_more_departure">Показание одометра прибытия больше, чем показание одометра убытия</string>
+    <string name="err_odometer_departure_less_arrival">Показание одометра убытия меньше, чем показание одометра прибытия</string>
+    <string name="err_time_format">Время должно быть в формате: Часы:Минуты</string>
+    <string name="err_invalid_minutes">Количество минут должно быть от 0 до 59</string>
+    <!-- Strings related to return to base fragment -->
+    <string name="tv_return_to_base_title">Следуйте на базу</string>
+    <string name="return_to_base_description">По приезду на базу нажмите кнопку \"Вернулся на базу\".</string>
+    <string name="btn_returned_to_base">Вернулся на базу</string>
+    <string name="tv_dialog_returned_to_base_confirmation_message">Вы подтверждаете, что вернулись на базу?</string>
+    <!-- Strings related to Refueling fragment -->
+    <string name="tv_fuel_title">Топливо</string>
+    <string name="tv_fuel_description">Просканируйте QR код чека с заправки и данные по заправке будут автоматически
+        занесены в приложение.
+    </string>
+    <string name="btn_add_refueling">Добавить заправку</string>
+    <string name="btn_confirm_fuel_consumption">Подтвердить расход топлива</string>
+    <string name="tv_refueling_title">Заправка %1$s</string>
+    <string name="tv_amount_of_fuel">%1$s л</string>
+    <string name="tv_date_and_time_of_refueling">%1$s %2$s</string>
+    <!-- Strings related to confirm fuel consumption dialog -->
+    <string name="tv_dialog_confirm_fuel_consumption_title">Расход топлива</string>
+    <string name="tv_dialog_confirm_fuel_consumption_message">Вы подтверждаете данные о расходе топлива?</string>
+    <!-- Strings related to Performance Indicators fragment -->
+    <string name="tv_performance_indicators_title">Показатели работы</string>
+    <string name="tv_odometer_departure_label">Одометр убытия по ПЛ</string>
+    <string name="tv_run_on_waybill_label">Пробег по ПЛ</string>
+    <string name="tv_odometer_arrival_label">Одометр прибытия по ПЛ</string>
+    <string name="tv_additional_equipment_title">Доп. оборудование</string>
+    <string name="tv_equipment_label">Оборудование</string>
+    <string name="tv_work_on_customer_title">Работа на заказчика</string>
+    <string name="tv_date_and_time_to_start_work_on_customer_talon_label">Начало работы по ТЗ</string>
+    <string name="tv_end_date_and_time_on_customer_talon_label">Окончание работы по ТЗ</string>
+    <string name="tv_run_on_customer_talon_label">Пробег по ТЗ</string>
+    <string name="tv_shipping_title">Перевозка груза</string>
+    <string name="tv_mileage_with_load_label">Пробег с грузом</string>
+    <string name="tv_weight_of_cargo_load_label">Вес груза, тн.</string>
+    <string name="tv_parking_with_engine_running_label">Простой с работающим двигателем (прогрев)</string>
+    <string name="et_hint_tons">Тонны</string>
+    <string name="btn_close_waybill">Закрыть путевой лист</string>
+    <!-- Strings related to confirm waybill_closure dialog -->
+    <string name="tv_dialog_confirm_waybill_closure_message">Вы подтверждаете, что хотите закрыть путевой лист?</string>
+    <!-- Strings related to Waybill closure fragment -->
+    <string name="btn_go_to_subsystem_selection">На главное меню</string>
+    <string name="tv_waybill_closure_title">Ожидание закрытия путевого листа</string>
+    <string name="tv_waybill_closure_description">Ждите, когда вам назначат новый путевой лист.</string>
+    <!-- Strings related to Information about waybill fragment -->
+    <string name="tv_information_about_waybill_title">Информация о ПЛ</string>
+    <string name="tv_customer_department_label">Подразделение заказчика</string>
+    <string name="tv_date_and_time_of_serve_label">Дата и время подачи</string>
+    <string name="tv_address_of_serve_label">Адрес подачи</string>
+    <string name="tv_purpose_label">Назначение заявки</string>
+    <string name="tv_contact_person_label">Контактное лицо</string>
+    <string name="tv_contact_phone_label">Телефон контактного лица</string>
+    <!-- String related to Draw -->
+    <string name="btn_fragment_draw_clear">Очистить</string>
+    <string name="btn_activity_draw_close">Х</string>
+    <string name="tv_fragment_draw_type_this">ПОДПИШИТЕ\nЗДЕСЬ</string>
+    <string name="tv_sign_right">Подвердите, что подпись верна</string>
+    <string name="title_dialog_sign_apply">Подпись</string>
+    <string name="tv_sign_rotate_warning">Поверните устройство для подписи</string>
+    <string name="error_creating_file_sign">Ошибка записи файла подписи</string>
+    <string name="dialog_alarm_msg">Внимание</string>
+    <string name="dialog_contact_person">введите Контактное лицо</string>
+    <string name="runtime_equipment">Время работы оборудования</string>
+    <string name="time_not_correct">Не верно введено время</string>
+    <string name="warning_distance">Предупреждение пройденного расстояния</string>
+    <!-- Strings related to Time spent fragment -->
+    <string name="tv_time_spent_title">Затраченное время</string>
+    <string name="tv_time_to_customer_label">Время от базы до заказчика</string>
+    <string name="tv_distance_to_customer_label">Расстояние от базы до заказчика</string>
+    <string name="tv_time_to_base_label">Время от заказчика до базы</string>
+    <string name="tv_distance_to_base_label">Расстояние от заказчика до базы</string>
+    <string name="btn_confirm">Подтвердить</string>
+    <string name="tv_time_spent_confirm_message">Подтвердить затраченное время?</string>
+    <string name="err_field_is_empty">Поле не может быть пустым</string>
+    <string name="err_invalid_time_to_customer">Время от базы до заказчика должно быть от 0 до 60 минут</string>
+    <string name="err_invalid_distance_to_customer">Расстояние от базы до заказчика должно быть от 0 до 10 колометров</string>
+    <string name="err_invalid_time_to_base">Суммарное время от базы до клиента и обратно не должно превышать 60 минут</string>
+    <string name="err_invalid_distance_to_base">Суммарное расстояние от базы до клиента и обратно не должно превышать 10 километров</string>
+    <string name="internet_alarm_title">Внимание!</string>
+    <string name="internet_alarm_message">Отсутствует интернет соединение. Загрузка данных невозможна.</string>
+    <!-- Strings related to Work pause reason selection fragment -->
+    <string name="tv_work_pause_reason_selection_title">Укажите причину остановки</string>
+    <string name="tv_reason_lunch_title">Обед</string>
+    <string name="tv_reason_customer_title">По вине заказчика</string>
+    <string name="tv_reason_driver_title">По вине исполнителя</string>
+    <string name="tv_reason_label">Причина</string>
+    <string name="err_required_reason_comment">Укажите причину</string>
+    <!-- Strings related to Work paused fragment -->
+    <string name="tv_work_paused_title">Приостановлена:</string>
+    <string name="btn_resume_work">Возобновить работу</string>
+    <string name="tv_work_paused_due_to_customer_reason_warning">При остановке работы по вине заказчика, время считается рабочим.</string>
+    <string name="message_start_timer_title">Старт таймера</string>
+    <string name="message_timer_start_body">Таймер в работе</string>
+    <string name="mode_test_print">Тестовая Печать</string>
+    <string name="server_error">Ошибка сервера</string>
+</resources>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="PrintFragmentBinding">
+        <import type="com.tetron.waybill.data.WaybillStep"/>
+
+        <variable
+                name="currentWaybillViewModel"
+                type="com.tetron.waybill.viewmodel.CurrentWaybillViewModel"/>
+        <variable
+                name="printViewModel"
+                type="com.tetron.waybill.viewmodel.PrintViewModel"/>
+        <variable
+                name="progressBarVisibility"
+                type ="java.lang.Boolean"/>
+        <variable
+                name="testPrintEnable"
+                type ="java.lang.Boolean"/>
+        <variable
+                name="test"
+                type ="java.lang.Boolean"/>
+        <variable
+                name="printWaybillFragment"
+                type="com.tetron.waybill.view.currentwaybill.PrintWaybillFragment"/>
+        <import type="android.view.View"/>
+        <import type="android.widget.CheckBox"/>
+
+
+
+    </data>
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                <LinearLayout
+                        android:id="@+id/llPrintWaybill_"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    <ImageView
+                            android:id="@+id/ivStageWork"
+                            style="@style/imageViewStage"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_stage_getting"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="ContentDescription" />
+
+                    <ImageView
+                            android:id="@+id/ivApprovedEmployeeIcon"
+                            android:layout_width="@dimen/img_view"
+                            android:layout_height="@dimen/img_view"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_margin="@dimen/default_margin"
+                            android:background="@drawable/ic_printer"
+                            tools:ignore="ContentDescription" />
+
+                    <TextView
+                            android:id="@+id/tvPrintWaybillTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/default_margin"
+                            android:gravity="center_horizontal"
+                            android:text="@{currentWaybillViewModel.currentWaybillStep == WaybillStep.PRINT_COMPLETED_WAYBILL ? @string/tv_completed_waybill_print_header : @string/tv_waybill_print_header}"
+                            android:textAllCaps="true"
+                            android:textSize="@dimen/title_text_size"
+                            android:textStyle="bold"
+                            tools:text="Needed Print" />
+
+
+                    <TextView
+                            android:id="@+id/tvPrintWaybillDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/default_margin"
+                            android:gravity="center_horizontal"
+                            android:text="@{currentWaybillViewModel.currentWaybillStep == WaybillStep.PRINT_COMPLETED_WAYBILL ? @string/tv_completed_waybill_print_description : @string/tv_waybill_print_description}"
+                            android:textSize="@dimen/subtitle_text_size"
+                            tools:text="Comment Print Jobs" />
+
+                    <ProgressBar
+                            android:id="@+id/progressBarPrint"
+                            style="?android:attr/progressBarStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="@{progressBarVisibility}"
+                            tools:visibility="invisible" />
+
+                    <CheckBox
+                            android:id="@+id/checkBoxPrint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginEnd="@dimen/chbox_element_margin_end"
+                            android:layout_marginBottom="@dimen/chbox_element_margin_button"
+                            android:checked="false"
+                            android:onClick="@{(view)-> printViewModel.setEnableTestPrint(((CheckBox)view).isChecked())}"
+                            android:text="@string/mode_test_print"
+
+                            />
+
+                    <Button
+                            android:id="@+id/btnPrint"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/button_height_print_fragment"
+                            android:layout_gravity="end|bottom"
+                            android:layout_margin="@dimen/default_margin"
+                            android:background="@drawable/button_accept_state"
+                            android:enabled="true"
+                            android:onClick="@{(view)->  (printViewModel.printDoc() == true)?  printWaybillFragment.setProgressBar() : printWaybillFragment.createDialog()}"
+                            android:text="@string/btn_print"
+                            android:textAlignment="center"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorBackgroundLight"
+                            android:textSize="@dimen/title_text_size" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </FrameLayout>
+
+</layout>

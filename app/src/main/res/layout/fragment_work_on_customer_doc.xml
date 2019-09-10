@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="WorkOnCustomerDocFragmentBinding">
+
+        <variable
+                name="currentWaybillViewModel"
+                type="com.tetron.waybill.viewmodel.CurrentWaybillViewModel" />
+
+        <variable
+                name="workOnCustomerDocViewModel"
+                type="com.tetron.waybill.viewmodel.WorkOnCustomerDocViewModel" />
+
+        <variable
+                name="trackViewModel"
+                type="com.tetron.waybill.viewmodel.TrackDataViewModel" />
+
+        <variable
+                name="timerViewModel"
+                type ="com.tetron.waybill.viewmodel.TimerViewModel"/>
+
+        <variable
+                name="count"
+                type ="java.lang.Long"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clContainer"
+            style="@style/rootFragmentContainer">
+
+        <ImageView
+                android:id="@+id/ivStageWork"
+                style="@style/imageViewStage"
+                android:src="@drawable/ic_stage_work"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+        <TextView
+                android:id="@+id/tvWorkOnCustomerDocTitle"
+                style="@style/textViewTitle"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_work_on_customer_doc_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivStageWork" />
+
+        <TextView
+                android:id="@+id/tvDozensHours"
+                style="@style/timerText"
+                tools:text="0"
+                android:text="@{String.valueOf(count/1000%10)}"
+                app:layout_constraintEnd_toStartOf="@+id/tvUnitsHours"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvWorkOnCustomerDocTitle"
+                tools:ignore="SelectableText" />
+
+        <TextView
+                android:id="@+id/tvUnitsHours"
+                style="@style/timerText"
+                tools:text="0"
+                android:text="@{String.valueOf(count/100%10)}"
+                app:layout_constraintEnd_toStartOf="@+id/tvDivider"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/tvDozensHours"
+                app:layout_constraintTop_toBottomOf="@+id/tvWorkOnCustomerDocTitle"
+                tools:ignore="SelectableText" />
+
+        <TextView
+                android:id="@+id/tvDivider"
+                style="@style/timerDivider"
+                android:text=":"
+                app:layout_constraintBottom_toBottomOf="@+id/tvUnitsHours"
+                app:layout_constraintEnd_toStartOf="@+id/tvDozensMinutes"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/tvUnitsHours"
+                app:layout_constraintTop_toBottomOf="@+id/tvWorkOnCustomerDocTitle"
+                tools:ignore="SelectableText" />
+
+        <TextView
+                android:id="@+id/tvDozensMinutes"
+                style="@style/timerText"
+                tools:text="0"
+                android:text="@{String.valueOf(count/10%10)}"
+                app:layout_constraintEnd_toStartOf="@+id/tvUnitsMinutes"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/tvDivider"
+                app:layout_constraintTop_toBottomOf="@+id/tvWorkOnCustomerDocTitle"
+                tools:ignore="SelectableText" />
+
+        <TextView
+                android:id="@+id/tvUnitsMinutes"
+                style="@style/timerText"
+                tools:text="0"
+                android:text="@{String.valueOf(count%10)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/tvDozensMinutes"
+                app:layout_constraintTop_toBottomOf="@+id/tvWorkOnCustomerDocTitle"
+                tools:ignore="SelectableText" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clPauseWorkContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_margin"
+                android:onClick="@{() -> currentWaybillViewModel.showStopReasonSelectionFragment()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDivider">
+
+            <View
+                    android:id="@+id/ivTopLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorTextLight"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                    android:id="@+id/ivPauseWork"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:layout_marginTop="@dimen/line_view_margin"
+                    android:layout_marginBottom="@dimen/line_view_margin"
+                    android:src="@drawable/ic_pause_work"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivTopLine"
+                    tools:ignore="ContentDescription" />
+
+            <TextView
+                    android:id="@+id/tvPauseWorkLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:text="@string/tv_pause_work"
+                    android:textColor="@color/colorTextDark"
+                    android:textSize="@dimen/subtitle_text_size"
+                    app:layout_constraintBottom_toBottomOf="@id/ivPauseWork"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ivPauseWork"
+                    app:layout_constraintTop_toTopOf="@id/ivPauseWork" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clFinishWorkContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginTop="@dimen/line_view_margin"
+                android:layout_marginEnd="@dimen/default_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clPauseWorkContainer">
+
+            <View
+                    android:id="@+id/ivMiddleLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorTextLight"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                    android:id="@+id/ivFinishWork"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:layout_marginTop="@dimen/line_view_margin"
+                    android:layout_marginBottom="@dimen/line_view_margin"
+                    android:src="@drawable/ic_finish_work"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivMiddleLine"
+                    tools:ignore="ContentDescription" />
+
+            <TextView
+                    android:id="@+id/tvFinishWorkLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:text="@string/tv_finish_work"
+                    android:textColor="@color/colorTextDark"
+                    android:textSize="@dimen/subtitle_text_size"
+                    app:layout_constraintBottom_toBottomOf="@id/ivFinishWork"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ivFinishWork"
+                    app:layout_constraintTop_toTopOf="@id/ivFinishWork" />
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/line_view_margin"
+                    android:background="@color/colorTextLight"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivFinishWork" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

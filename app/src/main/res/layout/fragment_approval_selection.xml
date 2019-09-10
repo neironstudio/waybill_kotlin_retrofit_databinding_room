@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="ApprovalSelectionFragmentBinding">
+
+        <variable
+                name="currentWaybillViewModel"
+                type="com.tetron.waybill.viewmodel.CurrentWaybillViewModel"/>
+
+    </data>
+
+    <LinearLayout
+            android:id="@+id/llContainer"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBackgroundLight">
+
+        <ImageView
+                android:id="@+id/ivStageWork"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:src="@drawable/ic_stage_getting"
+                android:scaleType="fitCenter"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:layout_gravity="center_horizontal"
+                tools:ignore="ContentDescription"/>
+
+        <TextView
+                android:id="@+id/tvCanDo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginStart="@dimen/default_margin"
+                android:text="@string/tv_can_do"
+                android:textSize="@dimen/subtitle_text_size"
+                android:textColor="@color/colorTextLight"/>
+
+        <View
+                android:background="@color/colorTextLight"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clMedicalApproveContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> currentWaybillViewModel.showMedicalApproveFragment()}"
+                android:layout_marginTop="@dimen/line_view_margin"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin">
+
+
+            <ImageView
+                    android:id="@+id/ivDoctor"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:src="@drawable/ic_doctor"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription"/>
+
+            <TextView
+                    android:id="@+id/tvMedicalApproveLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_label_medical_controller_mark"
+                    android:textColor="@color/colorTextDark"
+                    android:textSize="@dimen/subtitle_text_size"
+                    android:layout_marginStart="@dimen/default_margin"
+                    app:layout_constraintStart_toEndOf="@id/ivDoctor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivDoctor"
+                    app:layout_constraintBottom_toBottomOf="@id/ivDoctor"/>
+
+            <View
+                    android:background="@color/colorTextLight"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/line_view_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivDoctor"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clTechnicalApproveContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> currentWaybillViewModel.showTechnicalApproveFragment()}"
+                android:layout_marginTop="@dimen/line_view_margin"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin">
+
+            <ImageView
+                    android:id="@+id/ivTechnician"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:src="@drawable/ic_technician"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription"/>
+
+            <TextView
+                    android:id="@+id/tvTechnicalApproveLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_label_technical_controller_mark"
+                    android:textColor="@color/colorTextDark"
+                    android:textSize="@dimen/subtitle_text_size"
+                    android:layout_marginStart="@dimen/default_margin"
+                    app:layout_constraintStart_toEndOf="@id/ivTechnician"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivTechnician"
+                    app:layout_constraintBottom_toBottomOf="@id/ivTechnician"/>
+
+            <View
+                    android:background="@color/colorTextLight"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/line_view_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivTechnician"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</layout>

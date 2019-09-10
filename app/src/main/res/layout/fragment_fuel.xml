@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="FuelFragmentBinding">
+
+        <import type="android.view.View"/>
+
+        <import type="androidx.core.content.ContextCompat"/>
+
+        <variable
+                name="currentWaybillViewModel"
+                type="com.tetron.waybill.viewmodel.CurrentWaybillViewModel"/>
+
+        <variable
+                name="fuelViewModel"
+                type="com.tetron.waybill.viewmodel.FuelViewModel"/>
+
+    </data>
+
+    <LinearLayout
+            android:id="@+id/llFuelWaybill"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                android:id="@+id/ivFuelIcon"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ellipse"
+                android:layout_margin="@dimen/default_element_margin_horizontal"
+                android:layout_gravity="center_horizontal|center_vertical"
+                tools:ignore="ContentDescription"/>
+
+        <TextView
+                android:id="@+id/tvFuelTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_element_margin_horizontal"
+                android:text="@string/tv_fuel_title"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:textAllCaps="true"/>
+
+        <TextView
+                android:id="@+id/tvFuelDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_element_margin_horizontal"
+                android:text="@string/tv_fuel_description"
+                android:gravity="center_horizontal"/>
+
+        <Button
+                android:id="@+id/btnAddRefueling"
+                android:enabled="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_margin="@dimen/default_element_margin_horizontal"
+                android:text="@string/btn_add_refueling"
+                android:textAllCaps="false"/>
+
+        <LinearLayout
+                android:id="@+id/llRefuelingsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvRefuelings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:items="@{fuelViewModel.refuelings}" />
+
+        </LinearLayout>
+
+        <Button
+                android:id="@+id/btnConfirmFuelConsumption"
+                android:enabled="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_margin="@dimen/default_element_margin_horizontal"
+                android:text="@string/btn_confirm_fuel_consumption"
+                android:textAllCaps="false"/>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="WorkPausedFragmentBinding">
+
+        <import type="com.tetron.waybill.data.WorkPauseReason" />
+
+        <variable
+                name="workPausedViewModel"
+                type="com.tetron.waybill.viewmodel.WorkPausedViewModel" />
+
+        <variable
+                name="currentWaybillViewModel"
+                type="com.tetron.waybill.viewmodel.CurrentWaybillViewModel" />
+
+        <variable
+                name="timerViewModel"
+                type ="com.tetron.waybill.viewmodel.TimerViewModel"/>
+
+        <variable
+                name="count"
+                type ="java.lang.Long"/>
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/rootFragmentContainer">
+
+        <ImageView
+                android:id="@+id/ivStageWork"
+                style="@style/imageViewStage"
+                android:src="@drawable/ic_stage_work"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+        <TextView
+                android:id="@+id/tvWorkPausedTitle"
+                style="@style/textViewTitle"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:text="@string/tv_work_paused_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivStageWork" />
+
+        <TextView
+                android:id="@+id/tvPauseReason"
+                style="@style/textViewTitle"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:paddingBottom="@dimen/default_padding"
+                android:textSize="@dimen/title_text_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvWorkPausedTitle"
+                app:setText="@{workPausedViewModel.subtitle}"
+                tools:ignore="SelectableText" />
+
+        <TextView
+                android:id="@+id/tvPauseReasonCustomerWarning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingStart="@dimen/default_padding"
+                android:paddingEnd="@dimen/default_padding"
+                android:paddingBottom="@dimen/default_padding"
+                android:text="@string/tv_work_paused_due_to_customer_reason_warning"
+                android:textColor="@color/colorTextLight"
+                android:textSize="@dimen/field_text_size"
+                android:visibility="@{workPausedViewModel.showWarning}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPauseReason" />
+
+        <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="tvPauseReason,tvPauseReasonCustomerWarning" />
+
+        <TextView
+                android:id="@+id/tvDozensHours"
+                style="@style/timerText"
+                tools:text="0"
+                android:text="@{String.valueOf(count/1000%10)}"
+                app:layout_constraintEnd_toStartOf="@+id/tvUnitsHours"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barrier"
+                tools:ignore="SelectableText" />
+
+        <TextView
+                android:id="@+id/tvUnitsHours"
+                style="@style/timerText"
+                tools:text="0"
+                android:text="@{String.valueOf(count/100%10)}"
+                app:layout_constraintEnd_toStartOf="@+id/tvDivider"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/tvDozensHours"
+                app:layout_constraintTop_toBottomOf="@+id/barrier"
+                tools:ignore="SelectableText" />
+
+        <TextView
+                android:id="@+id/tvDivider"
+                style="@style/timerDivider"
+                android:text=":"
+                app:layout_constraintBottom_toBottomOf="@+id/tvUnitsHours"
+                app:layout_constraintEnd_toStartOf="@+id/tvDozensMinutes"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/tvUnitsHours"
+                app:layout_constraintTop_toBottomOf="@+id/barrier"
+                tools:ignore="SelectableText" />
+
+        <TextView
+                android:id="@+id/tvDozensMinutes"
+                style="@style/timerText"
+                tools:text="0"
+                android:text="@{String.valueOf(count/10%10)}"
+                app:layout_constraintEnd_toStartOf="@+id/tvUnitsMinutes"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/tvDivider"
+                app:layout_constraintTop_toBottomOf="@+id/barrier"
+                tools:ignore="SelectableText" />
+
+        <TextView
+                android:id="@+id/tvUnitsMinutes"
+                style="@style/timerText"
+                tools:text="0"
+                android:text="@{String.valueOf(count%10)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/tvDozensMinutes"
+                app:layout_constraintTop_toBottomOf="@+id/barrier"
+                tools:ignore="SelectableText" />
+
+        <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/default_margin"
+                app:layout_constraintBottom_toTopOf="@+id/btnResumeWork"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDivider" />
+
+        <Button
+                android:id="@+id/btnResumeWork"
+                style="@style/buttonConfirm"
+                android:onClick="@{() -> workPausedViewModel.resumeWork() + timerViewModel.updateToWorkTime()}"
+                android:text="@string/btn_resume_work"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

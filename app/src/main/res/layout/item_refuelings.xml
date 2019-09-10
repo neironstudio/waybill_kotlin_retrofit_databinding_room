@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="RefuelingItemBinding">
+
+        <variable
+                name="refueling"
+                type="com.tetron.waybill.model.waybill.Refueling" />
+
+        <variable
+                name="fuelViewModel"
+                type="com.tetron.waybill.viewmodel.FuelViewModel"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <TextView
+                android:id="@+id/tvRefuelingTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_text_element_margin"
+                app:layout_constraintEnd_toEndOf="@+id/tvAmountOfFuel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@{String.format(@string/tv_refueling_title, refueling.id)}"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+        <TextView
+                android:id="@+id/tvAmountOfFuel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_text_element_margin"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@{String.format(@string/tv_amount_of_fuel, refueling.amount)}"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+        <TextView
+                android:id="@+id/tvDateAndTimeOfRefueling"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_text_element_margin"
+                android:text="@{String.format(@string/tv_date_and_time_of_refueling, refueling.date, refueling.time)}"
+                app:layout_constraintTop_toBottomOf="@id/tvRefuelingTitle"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+                android:id="@+id/tvAddressOfRefueling"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_text_element_margin"
+                android:text="@{refueling.address}"
+                app:layout_constraintTop_toBottomOf="@+id/tvDateAndTimeOfRefueling"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

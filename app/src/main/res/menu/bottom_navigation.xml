@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/navigation_current_waybill"
+            android:title="@string/lbl_current_waybill_short"/>
+
+    <item
+            android:id="@+id/navigation_information"
+            android:title="@string/lbl_info"/>
+
+    <item
+            android:id="@+id/navigation_photo"
+            android:title="@string/lbl_photo"/>
+
+    <item
+            android:id="@+id/navigation_force_majeure"
+            android:title="@string/lbl_force_majeure"/>
+</menu>

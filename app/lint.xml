@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="HardcodedText" severity="ignore" />
+    <issue id="UnusedResources" severity="ignore"/>
+    <issue id="UnusedIds" severity="ignore"/>
+    <issue id="IconLocation" severity="ignore"/>
+    <issue id="TypographyQuotes" severity="ignore"/>
+    <issue id="IconExpectedSize" severity="ignore"/>
+    <!-- Don't warn about available alpha versions -->
+    <issue id="GradleDependency">
+        <ignore regexp="is available: .*[alpha|beta]" />
+    </issue>
+
+    <!--<issue id="Typos" severity="ignore">-->
+        <!--<ignore path="**/google-services.json"/>-->
+        <!--<ignore regexp="file[app]:*.json"/>-->
+    <!--</issue>-->
+</lint>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="WorkPauseReasonSelectionFragmentBinding">
+
+        <variable
+                name="workPauseReasonSelectionViewModel"
+                type="com.tetron.waybill.viewmodel.WorkPauseReasonSelectionViewModel" />
+
+        <variable
+                name="currentWaybillViewModel"
+                type="com.tetron.waybill.viewmodel.CurrentWaybillViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/rootFragmentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ImageView
+                android:id="@+id/ivStageWork"
+                style="@style/imageViewStage"
+                android:src="@drawable/ic_stage_work"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+        <TextView
+                android:id="@+id/tvPauseReasonSelectionTitle"
+                style="@style/textViewTitle"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_work_pause_reason_selection_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivStageWork" />
+
+        <ImageView
+                android:id="@+id/ivReasonLunch"
+                style="@style/imageViewWorkPauseReason"
+                android:alpha="@{workPauseReasonSelectionViewModel.workPauseReasonState.lunch}"
+                android:onClick="@{() -> workPauseReasonSelectionViewModel.checkedReasonLunch()}"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_lunch"
+                app:layout_constraintEnd_toStartOf="@+id/ivReasonCustomer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPauseReasonSelectionTitle"
+                tools:ignore="ContentDescription" />
+
+        <TextView
+                android:id="@+id/tvReasonLunchTitle"
+                style="@style/textViewFieldLabel"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:alpha="@{workPauseReasonSelectionViewModel.workPauseReasonState.lunch}"
+                android:gravity="center"
+                android:onClick="@{() -> workPauseReasonSelectionViewModel.checkedReasonLunch()}"
+                android:text="@string/tv_reason_lunch_title"
+                app:layout_constraintEnd_toEndOf="@+id/ivReasonLunch"
+                app:layout_constraintStart_toStartOf="@+id/ivReasonLunch"
+                app:layout_constraintTop_toBottomOf="@+id/ivReasonLunch" />
+
+        <ImageView
+                android:id="@+id/ivReasonCustomer"
+                style="@style/imageViewWorkPauseReason"
+                android:alpha="@{workPauseReasonSelectionViewModel.workPauseReasonState.customer}"
+                android:onClick="@{() -> workPauseReasonSelectionViewModel.checkedReasonCustomer()}"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_customer"
+                app:layout_constraintEnd_toStartOf="@+id/ivReasonDriver"
+                app:layout_constraintStart_toEndOf="@+id/ivReasonLunch"
+                app:layout_constraintTop_toBottomOf="@+id/tvPauseReasonSelectionTitle"
+                tools:ignore="ContentDescription" />
+
+        <TextView
+                android:id="@+id/tvReasonCustomerTitle"
+                style="@style/textViewFieldLabel"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:alpha="@{workPauseReasonSelectionViewModel.workPauseReasonState.customer}"
+                android:gravity="center"
+                android:onClick="@{() -> workPauseReasonSelectionViewModel.checkedReasonCustomer()}"
+                android:text="@string/tv_reason_customer_title"
+                app:layout_constraintEnd_toEndOf="@+id/ivReasonCustomer"
+                app:layout_constraintStart_toStartOf="@+id/ivReasonCustomer"
+                app:layout_constraintTop_toBottomOf="@+id/ivReasonCustomer" />
+
+        <ImageView
+                android:id="@+id/ivReasonDriver"
+                style="@style/imageViewWorkPauseReason"
+                android:alpha="@{workPauseReasonSelectionViewModel.workPauseReasonState.driver}"
+                android:onClick="@{() -> workPauseReasonSelectionViewModel.checkedReasonDriver(etReasonComment.getText().toString())}"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_driver"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivReasonCustomer"
+                app:layout_constraintTop_toBottomOf="@+id/tvPauseReasonSelectionTitle"
+                tools:ignore="ContentDescription" />
+
+        <TextView
+                android:id="@+id/tvReasonDriverTitle"
+                style="@style/textViewFieldLabel"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:alpha="@{workPauseReasonSelectionViewModel.workPauseReasonState.driver}"
+                android:gravity="center"
+                android:onClick="@{() -> workPauseReasonSelectionViewModel.checkedReasonDriver(etReasonComment.getText().toString())}"
+                android:text="@string/tv_reason_driver_title"
+                app:layout_constraintEnd_toEndOf="@+id/ivReasonDriver"
+                app:layout_constraintStart_toStartOf="@+id/ivReasonDriver"
+                app:layout_constraintTop_toBottomOf="@+id/ivReasonDriver" />
+
+        <LinearLayout
+                android:id="@+id/clReasonCommentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="@{workPauseReasonSelectionViewModel.workPauseReasonState.driver}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvReasonDriverTitle">
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilReasonComment"
+                    style="@style/textInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_horizontal_margin"
+                    app:errorText="@{workPauseReasonSelectionViewModel.reasonCommentError}">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etReasonComment"
+                        style="@style/editTextComment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/tv_reason_label" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="tvReasonDriverTitle,clReasonCommentContainer" />
+
+        <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_margin"
+                app:layout_constraintBottom_toTopOf="@+id/btnConfirm"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barrier" />
+
+        <Button
+                android:id="@+id/btnConfirm"
+                style="@style/buttonConfirm"
+                android:layout_gravity="bottom"
+                android:onClick="@{() -> workPauseReasonSelectionViewModel.pauseWork(etReasonComment.getText().toString())}"
+                android:text="@string/btn_confirm"
+                app:isEnabled="@{workPauseReasonSelectionViewModel.workPauseReasonState.commentIsValid}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

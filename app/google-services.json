@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "571833075246",
+    "firebase_url": "https://waybill-f8ffa.firebaseio.com",
+    "project_id": "waybill-f8ffa",
+    "storage_bucket": "waybill-f8ffa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:571833075246:android:79e4bc13f8f3d27f",
+        "android_client_info": {
+          "package_name": "com.tetron.waybill"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "571833075246-sdf7uh949ojlttjbnrids53ghqq4c8e6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMw8k8KTnPhCox60xIybBHZ6twUG_iObA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "571833075246-sdf7uh949ojlttjbnrids53ghqq4c8e6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

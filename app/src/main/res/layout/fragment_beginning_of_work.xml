@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="BeginningOfWorkFragmentBinding">
+        <variable
+                name="currentWaybillViewModel"
+                type="com.tetron.waybill.viewmodel.CurrentWaybillViewModel"/>
+        <variable
+                name="trackDataViewModel"
+                type="com.tetron.waybill.viewmodel.TrackDataViewModel"/>
+        <variable
+                name="typeWay"
+                type ="com.tetron.waybill.viewmodel.TrackDataViewModel.TypeWay"/>
+        <variable
+                name="timerViewModel"
+                type ="com.tetron.waybill.viewmodel.TimerViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clContainer"
+            style="@style/rootFragmentContainer">
+
+        <ImageView
+                android:id="@+id/ivStageWork"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/iv_height_draw_fragment"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_stage_work"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+        <ImageView
+                android:id="@+id/ivBeginningOfWork"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:src="@mipmap/beginning_of_work"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivStageWork"
+                tools:ignore="ContentDescription" />
+
+        <TextView
+                android:id="@+id/tvBeginningOfWorkLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:text="@string/tv_beginning_of_work_title"
+                android:textAllCaps="true"
+                android:textColor="@color/colorTextDark"
+                android:textSize="@dimen/title_text_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivBeginningOfWork"/>
+
+        <TextView
+                android:id="@+id/tvBeginningOfWorkDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:text="@string/tv_beginning_of_work_description"
+                android:textColor="@color/colorTextLight"
+                android:textSize="@dimen/subtitle_text_size"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvBeginningOfWorkLabel"/>
+
+        <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/btnDepart"
+                app:layout_constraintTop_toBottomOf="@+id/tvBeginningOfWorkDescription" />
+
+        <Button
+                android:id="@+id/btnDepart"
+                style="@style/buttonConfirm"
+                android:text="@string/btn_get_started"
+                android:onClick="@{() -> currentWaybillViewModel.switchWaybillStep() + trackDataViewModel.addWayPath(typeWay.WAY_ON_CUSTOMER.name) + timerViewModel.updateToWorkTime() }"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

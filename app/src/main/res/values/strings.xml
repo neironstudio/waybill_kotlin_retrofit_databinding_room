@@ -1,0 +1,197 @@
+<resources>
+    <string name="app_name">Waybill</string>
+    <string name="app_title_back">Back</string>
+    <!-- Strings related to login -->
+    <string name="et_hint_username">Username</string>
+    <string name="et_hint_password">Password</string>
+    <string name="btn_sign_in">Sign in</string>
+    <string name="msg_welcome">"Welcome!"</string>
+    <string name="err_invalid_username">Username must be >1 characters</string>
+    <string name="err_invalid_password">Password must be >3 characters</string>
+    <string name="err_login_failed">"Login failed"</string>
+    <string name="allowed_characters" translatable="false">
+        ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&amp;-+*/.,
+    </string>
+    <!-- Strings related to bottom navigation -->
+    <string name="lbl_current_waybill_short">WB</string>
+    <string name="lbl_info">Information</string>
+    <string name="lbl_photo">Photo</string>
+    <string name="lbl_force_majeure">Force Majeure</string>
+    <!-- Strings related to subsystem selection -->
+    <string name="btn_current_waybill">Current waybill</string>
+    <string name="btn_logout">Logout</string>
+    <!-- Strings related to current waybill -->
+    <string name="tv_waybill_number">Waybill №%1$s</string>
+    <string name="tv_waybill_status">Created</string>
+    <!-- Strings related to print fragment -->
+    <string name="btn_print">Print</string>
+    <string name="tv_waybill_print_header">Print required</string>
+    <string name="tv_waybill_print_description">To start work you should print it at the terminal. After printing the
+        waybill, press the Printed button.
+    </string>
+    <string name="tv_completed_waybill_print_header">Printing Waybill</string>
+    <string name="tv_completed_waybill_print_description">Print the completed waybill.</string>
+    <!-- Strings related to print confirmation dialog -->
+    <string name="tv_dialog_print_confirmation_title">Print status</string>
+    <string name="tv_dialog_print_confirmation_message">Was the printing successful?</string>
+    <string name="btn_repeat_print">Reprint</string>
+    <string name="btn_yes">Yes</string>
+    <string name="btn_no">No</string>
+    <string name="btn_cancel">Cancel</string>
+    <!-- Strings related to Approve mark fragment -->
+    <string name="tv_can_do">At the moment you can do:</string>
+    <string name="btn_get">Get</string>
+    <string name="btn_check_pin">Check</string>
+    <string name="et_hint_pin">Employee PIN</string>
+    <string name="tv_label_date">Date</string>
+    <string name="tv_label_time">Time</string>
+    <string name="tv_mark_status">Not received</string>
+    <string name="tv_label_medical_controller_mark">Medical controller mark</string>
+    <string name="tv_label_technical_controller_mark">Technical controller mark</string>
+    <string name="tv_medical_employee_name_label">Doctor:&#160;</string>
+    <string name="tv_technical_employee_name_label">Technical controller:&#160;</string>
+    <string name="tv_hint_date" translatable="false">--.--.----</string>
+    <string name="tv_hint_time" translatable="false">--:--</string>
+    <string name="err_invalid_pin_mask">PIN must be 4 digits</string>
+    <string name="err_invalid_pin">Invalid PIN</string>
+    <!-- Strings related to Departure to the customer fragment -->
+    <string name="tv_departure_to_customer_title">Departure to the customer</string>
+    <string name="tv_departure_to_customer_description">To confirm the departure to the customer - click the \"Depart\"
+        button
+    </string>
+    <string name="btn_depart">Depart</string>
+    <!-- Strings related to Departure to the customer fragment -->
+    <string name="tv_beginning_of_work_title">Beginning of work</string>
+    <string name="tv_beginning_of_work_description">You have confirmed departure to the customer. On arrival, click on the
+        “Came to customer” button.
+    </string>
+    <string name="btn_get_started">Came to customer</string>
+    <!-- Strings related to Work on customer doc fragment -->
+    <string name="tv_work_on_customer_doc_title">Work on Customer\'s Task</string>
+    <string name="tv_pause_work">Pause work</string>
+    <string name="tv_finish_work">Finish work</string>
+    <string name="tv_dialog_finish_work_confirmation_title">Finish the work?</string>
+    <string name="tv_dialog_finish_work_confirmation_message">Are you sure you want to finish the work?</string>
+    <!-- Strings related to Customer mark fragment -->
+    <string name="tv_customer_mark_title">Customer mark</string>
+    <string name="tv_customer_name_label">Customer name</string>
+    <string name="tv_contact_person_position_label">Contact position</string>
+    <string name="tv_odometer_arrival_to_customer_label">Odometer of arrival to the customer</string>
+    <string name="tv_odometer_departure_from_customer_label">Odometer of departure from the customer</string>
+    <string name="tv_customer_full_name_label">Customer full name</string>
+    <string name="tv_date_and_time_of_signature_label">Date and time of signature</string>
+    <string name="tv_date_to_start_work_label">Date to start work</string>
+    <string name="tv_time_to_start_work_label">Time to start work</string>
+    <string name="tv_date_to_end_work_label">Date to end work</string>
+    <string name="tv_time_to_end_work_label">Time to end work</string>
+    <string name="tv_confirmed_and_signed_hours_label">Confirmed and signed hours</string>
+    <string name="tv_machine_kilometers_label">The number of machine kilometers to sign</string>
+    <string name="tv_travel_time_label">Travel time</string>
+    <string name="btn_edit">Edit</string>
+    <string name="tv_additional_equipment_working_time_label">Working time of additional equipment</string>
+    <string name="et_hint_kilometers">Kilometers</string>
+    <string name="et_hint_hours">Hours</string>
+    <string name="et_hint_minutes">Minutes</string>
+    <string name="btn_subscribe">Subscribe</string>
+    <string name="tv_trailer_was_used">Trailer was used</string>
+    <string name="err_odometer_interval">The value must be between 0 and 999999</string>
+    <string name="err_odometer_arrival_more_departure">The Arrival odometer\'s value greater than the Departure odometer\'s value</string>
+    <string name="err_odometer_departure_less_arrival">The Departure odometer\'s value less than the Arrival odometer\'s value</string>
+    <string name="err_time_format">The time should be in the format Hours:Minutes</string>
+    <string name="err_invalid_minutes">Minutes should be between 0 and 59</string>
+    <!-- Strings related to Return to base fragment -->
+    <string name="tv_return_to_base_title">Return to base</string>
+    <string name="return_to_base_description">Upon arrival at the base, click the \"Returned to base\" button.</string>
+    <string name="btn_returned_to_base">Returned to base</string>
+    <string name="tv_dialog_returned_to_base_confirmation_message">You confirm that you returned to the base?</string>
+    <!-- Strings related to Refueling fragment -->
+    <string name="tv_fuel_title">Fuel</string>
+    <string name="tv_fuel_description">Scan the QR code of the check from the refueling and the refueling data will be
+        automatically entered into the application.
+    </string>
+    <string name="btn_add_refueling">Add refueling</string>
+    <string name="btn_confirm_fuel_consumption">Confirm fuel consumption</string>
+    <string name="tv_refueling_title">Refueling %1$s</string>
+    <string name="tv_amount_of_fuel">%1$s L</string>
+    <string name="tv_date_and_time_of_refueling">%1$s %2$s</string>
+    <!-- Strings related to confirm fuel consumption dialog -->
+    <string name="tv_dialog_confirm_fuel_consumption_title">Fuel consumption</string>
+    <string name="tv_dialog_confirm_fuel_consumption_message">Do you confirm the fuel consumption?</string>
+    <!-- Strings related to Performance Indicators fragment -->
+    <string name="tv_performance_indicators_title">Performance indicators</string>
+    <string name="tv_odometer_departure_label">Odometer departure</string>
+    <string name="tv_run_on_waybill_label">Run on waybill</string>
+    <string name="tv_odometer_arrival_label">Odometer arrival</string>
+    <string name="tv_additional_equipment_title">Optional equipment</string>
+    <string name="tv_equipment_label">Equipment</string>
+    <string name="tv_work_on_customer_title">Work on customer</string>
+    <string name="tv_date_and_time_to_start_work_on_customer_talon_label">Date and time to start work on customer\'s
+        talon
+    </string>
+    <string name="tv_end_date_and_time_on_customer_talon_label">End date and time on customer\'s talon</string>
+    <string name="tv_run_on_customer_talon_label">Run on customer\'s talon</string>
+    <string name="tv_shipping_title">Shipping</string>
+    <string name="tv_mileage_with_load_label">Mileage with load</string>
+    <string name="tv_weight_of_cargo_load_label">Weight of cargo</string>
+    <string name="tv_parking_with_engine_running_label">Parking with the engine running (warm-up)</string>
+    <string name="et_hint_tons">Tons</string>
+    <string name="btn_close_waybill">Close waybill</string>
+    <!-- Strings related to confirm waybill_closure dialog -->
+    <string name="tv_dialog_confirm_waybill_closure_message">Do you confirm that you want to close the waybill?</string>
+    <!-- Strings related to Waybill closure fragment -->
+    <string name="btn_go_to_subsystem_selection">Go to Subsystem selection</string>
+    <string name="tv_waybill_closure_title">Waiting for closure of the waybill</string>
+    <string name="tv_waybill_closure_description">Waiting for a new waybill for you.</string>
+    <!-- Strings related to Information about waybill fragment -->
+    <string name="tv_information_about_waybill_title">Information about waybill</string>
+    <string name="tv_customer_department_label">Customer\'s department</string>
+    <string name="tv_date_and_time_of_serve_label">Date and time of serve</string>
+    <string name="tv_address_of_serve_label">Address of serve</string>
+    <string name="tv_purpose_label">purpose</string>
+    <string name="tv_contact_person_label">Contact person</string>
+    <string name="tv_contact_phone_label">Contact phone</string>
+    <!-- String related to Draw -->
+    <string name="btn_activity_draw_close">X</string>
+    <string name="btn_fragment_draw_clear">Clear</string>
+    <string name="tv_fragment_draw_type_this">Subscribe\nthis</string>
+    <string name="title_dialog_sign_apply">Sign</string>
+    <string name="tv_sign_right">Sign is a rigth</string>
+    <string name="tv_sign_rotate_warning">Please Rotate</string>
+    <string name="default_sign_file_name" translatable="false">sign_picture</string>
+    <string name="error_creating_file_sign">Error Creating File Sign</string>
+    <string name="dialog_contact_person">Dialog Contact person</string>
+    <string name="dialog_alarm_msg">Alarm</string>
+    <string name="warning_distance">Warning distance</string>
+    <string name="runtime_equipment">Runtime equipment</string>
+    <string name="time_not_correct">Input time not correct</string>
+    <!-- Strings related to Time spent fragment -->
+    <string name="tv_time_spent_title">Time Spent</string>
+    <string name="tv_time_to_customer_label">Time from the base to the customer</string>
+    <string name="tv_distance_to_customer_label">Distance from the base to the customer</string>
+    <string name="tv_time_to_base_label">Time from the customer to the base</string>
+    <string name="tv_distance_to_base_label">Distance from the customer to the base</string>
+    <string name="btn_confirm">Confirm</string>
+    <string name="tv_time_spent_confirm_message">Confirm time spent?</string>
+    <string name="err_field_is_empty">The field must not be empty</string>
+    <string name="err_invalid_time_to_customer">The time from the base to the customer should be from 0 to 60 minutes</string>
+    <string name="err_invalid_distance_to_customer">The distance from the base to the customer should be from 0 to 10 kilometers</string>
+    <string name="err_invalid_time_to_base">The total time from the base to the customer and back should not exceed 60 minutes</string>
+    <string name="err_invalid_distance_to_base">The total distance from the base to the customer and back should not exceed 10 kilometers</string>
+    <string name="internet_alarm_message">Internet connection failed</string>
+    <string name="internet_alarm_title">Warning!</string>
+    <!-- Strings related to Work pause reason selection fragment -->
+    <string name="tv_work_pause_reason_selection_title">Select a reason \n for work pause</string>
+    <string name="tv_reason_lunch_title">Lunch</string>
+    <string name="tv_reason_customer_title">Due to customer fault</string>
+    <string name="tv_reason_driver_title">Due the fault of the performer</string>
+    <string name="tv_reason_label">Reason</string>
+    <string name="err_required_reason_comment">Reason comment is required</string>
+    <!-- Strings related to Work paused fragment -->
+    <string name="tv_work_paused_title">Paused</string>
+    <string name="btn_resume_work">Resume work</string>
+    <string name="tv_work_paused_due_to_customer_reason_warning">When work is paused due to the fault of the customer, time is considered working.</string>
+    <string name="message_start_timer_title">Start Timer</string>
+    <string name="message_timer_start_body">timer run</string>
+    <string name="mode_test_print">PrintTest</string>
+    <string name="server_error">server error</string>
+</resources>

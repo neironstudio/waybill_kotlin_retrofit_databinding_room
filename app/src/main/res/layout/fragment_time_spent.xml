@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="TimeSpentFragmentBinding">
+
+        <variable
+                name="currentWaybillViewModel"
+                type="com.tetron.waybill.viewmodel.CurrentWaybillViewModel" />
+
+        <variable
+                name="currentCustomerDocViewModel"
+                type="com.tetron.waybill.viewmodel.CurrentCustomerDocViewModel" />
+
+        <variable
+                name="timeSpentViewModel"
+                type="com.tetron.waybill.viewmodel.TimeSpentViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <ImageView
+                android:id="@+id/ivStageWork"
+                style="@style/imageViewStage"
+                android:src="@drawable/ic_stage_work"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+        <TextView
+                android:id="@+id/tvTimeSpentTitle"
+                style="@style/textViewTitle"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_time_spent_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivStageWork" />
+
+        <LinearLayout
+                android:id="@+id/clTimeToCustomerContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTimeSpentTitle">
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilTimeToCustomer"
+                    style="@style/textInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_horizontal_margin"
+                    app:errorText="@{currentCustomerDocViewModel.timeToCustomerError}">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etTimeToCustomer"
+                        style="@style/editTextField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/tv_time_to_customer_label"
+                        android:text="@{currentCustomerDocViewModel.currentCustomerDoc.timeToCustomer.toString()}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/clDistanceToCustomerContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clTimeToCustomerContainer">
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilDistanceToCustomer"
+                    style="@style/textInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_horizontal_margin"
+                    app:errorText="@{currentCustomerDocViewModel.distanceToCustomerError}">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etDistanceToCustomer"
+                        style="@style/editTextField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/tv_distance_to_customer_label"
+                        android:text="@{currentCustomerDocViewModel.currentCustomerDoc.distanceToCustomer.toString()}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/clTimeToBaseContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clDistanceToCustomerContainer">
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilTimeToBase"
+                    style="@style/textInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_horizontal_margin"
+                    app:errorText="@{currentCustomerDocViewModel.timeToBaseError}">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etTimeToBase"
+                        style="@style/editTextField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/tv_time_to_base_label"
+                        android:text="@{currentCustomerDocViewModel.currentCustomerDoc.timeToBase.toString()}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/clDistanceToBaseContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clTimeToBaseContainer">
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilDistanceToBase"
+                    style="@style/textInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_horizontal_margin"
+                    app:errorText="@{currentCustomerDocViewModel.distanceToBaseError}">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etDistanceToBase"
+                        style="@style/editTextField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/tv_distance_to_base_label"
+                        android:text="@{currentCustomerDocViewModel.currentCustomerDoc.distanceToBase.toString()}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/btnConfirm"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clDistanceToBaseContainer" />
+
+        <Button
+                android:id="@+id/btnConfirm"
+                style="@style/buttonConfirm"
+                android:layout_gravity="bottom"
+                android:text="@string/btn_confirm"
+                app:isEnabled="@{currentCustomerDocViewModel.isDataValid}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

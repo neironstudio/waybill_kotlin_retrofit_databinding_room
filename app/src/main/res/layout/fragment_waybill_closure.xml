@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="WaybillClosureFragmentBinding">
+
+        <variable
+                name="currentWaybillViewModel"
+                type="com.tetron.waybill.viewmodel.CurrentWaybillViewModel" />
+
+        <variable
+                name="timerViewModel"
+                type ="com.tetron.waybill.viewmodel.TimerViewModel"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/llPrintWaybill"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <ImageView
+                android:id="@+id/ivWaybillClosureIcon"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="@dimen/default_element_margin_horizontal"
+                android:src="@drawable/ellipse"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+        <TextView
+                android:id="@+id/tvWaybillClosureTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_element_margin_horizontal"
+                android:text="@string/tv_waybill_closure_title"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivWaybillClosureIcon" />
+
+        <TextView
+                android:id="@+id/tvWaybillClosureDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_element_margin_horizontal"
+                android:text="@string/tv_waybill_closure_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvWaybillClosureTitle" />
+
+        <Button
+                android:id="@+id/btnGoToSubsystemSelection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_element_margin_horizontal"
+                android:enabled="true"
+                android:text="@string/btn_go_to_subsystem_selection"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

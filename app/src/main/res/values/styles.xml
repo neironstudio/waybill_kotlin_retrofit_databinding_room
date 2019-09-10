@@ -1,0 +1,176 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="imageViewStage">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/stage_height</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:layout_marginStart">@dimen/default_margin</item>
+        <item name="android:layout_marginTop">@dimen/default_margin</item>
+        <item name="android:layout_marginEnd">@dimen/default_margin</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+    <style name="imageViewWorkPauseReason">
+        <item name="android:layout_width">86dp</item>
+        <item name="android:layout_height">86dp</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:layout_marginTop">@dimen/default_margin</item>
+    </style>
+
+    <style name="buttonConfirm" parent="@android:style/Widget.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/stage_height</item>
+        <item name="android:layout_margin">@dimen/default_margin</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/colorBackgroundLight</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:background">@drawable/button_accept_state</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="textViewTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:paddingStart">@dimen/text_padding</item>
+        <item name="android:paddingEnd">@dimen/text_padding</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/title_text_size</item>
+        <item name="android:textColor">@color/colorTextDark</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:layout_marginTop">@dimen/default_margin</item>
+    </style>
+
+    <style name="textViewFieldLabel">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">@dimen/label_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="textViewField">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/field_text_size</item>
+        <item name="android:textColor">@color/colorTextLight</item>
+    </style>
+
+    <style name="editTextField">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/field_text_size</item>
+        <item name="android:textColor">@color/colorTextLight</item>
+        <item name="android:drawableEnd">@drawable/ic_edit</item>
+        <item name="android:backgroundTint">@color/colorPrimaryLight</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="editTextFieldDisabled">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:enabled">false</item>
+        <item name="android:textSize">@dimen/field_text_size</item>
+        <item name="android:textColor">@color/colorTextLight</item>
+        <item name="android:backgroundTint">@color/colorTextLight</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="editTextComment">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/field_text_size</item>
+        <item name="android:textColor">@color/colorTextDark</item>
+        <item name="android:backgroundTint">@color/colorPrimaryLight</item>
+        <item name="android:singleLine">false</item>
+    </style>
+
+    <style name="imageViewEdit">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/ic_edit</item>
+    </style>
+
+    <style name="viewBottomFieldLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginTop">@dimen/line_view_margin</item>
+    </style>
+
+    <style name="textInputLayout" parent="TextAppearance.AppCompat">
+        <item name="android:layout_marginStart">@dimen/default_margin</item>
+        <item name="android:layout_marginTop">@dimen/default_margin</item>
+        <item name="android:layout_marginEnd">@dimen/default_margin</item>
+        <!-- Hint color and label color in False state -->
+        <item name="android:textColorHint">@color/colorPrimaryDark</item>
+        <item name="android:textStyle">bold</item>
+        <!-- Label color in True state and bar color False and True state -->
+        <item name="colorAccent">@color/colorTextDark</item>
+        <item name="colorControlNormal">@color/colorTextDark</item>
+        <item name="colorControlActivated">@color/colorPrimaryDark</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+    </style>
+
+    <style name="textInputLayoutDisabled" parent="TextAppearance.AppCompat">
+        <item name="android:layout_marginStart">@dimen/default_margin</item>
+        <item name="android:layout_marginTop">@dimen/default_margin</item>
+        <item name="android:layout_marginEnd">@dimen/default_margin</item>
+        <!-- Hint color and label color in False state -->
+        <item name="android:textColorHint">@color/colorTextDark</item>
+        <!-- Label color in True state and bar color False and True state -->
+        <item name="colorAccent">@color/colorTextDark</item>
+        <item name="colorControlNormal">@color/colorTextDark</item>
+        <item name="colorControlActivated">@color/colorTextDark</item>
+        <item name="colorControlHighlight">@color/colorTextDark</item>
+    </style>
+
+    <style name="constraintLayoutContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/colorBackgroundLight</item>
+        <item name="android:layout_marginStart">@dimen/default_margin</item>
+        <item name="android:layout_marginTop">@dimen/default_margin</item>
+        <item name="android:layout_marginEnd">@dimen/default_margin</item>
+    </style>
+
+    <style name="rootFragmentContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/colorBackgroundLight</item>
+    </style>
+
+    <style name="timerText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/colorBackgroundDark</item>
+        <item name="android:textSize">@dimen/timer_text_size</item>
+        <item name="android:padding">@dimen/timer_text_padding</item>
+        <item name="android:layout_margin">@dimen/timer_element_margin</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+    </style>
+
+    <style name="timerDivider">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/timer_element_margin</item>
+        <item name="android:paddingTop">@dimen/timer_text_padding</item>
+        <item name="android:paddingBottom">@dimen/timer_text_padding</item>
+        <item name="android:textSize">@dimen/timer_text_size</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+    </style>
+
+</resources>

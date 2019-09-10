@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="CustomerMarkFragmentBinding">
+
+        <variable
+                name="customerMarkViewModel"
+                type="com.tetron.waybill.viewmodel.CustomerMarkViewModel" />
+
+        <variable
+                name="currentWaybillViewModel"
+                type="com.tetron.waybill.viewmodel.CurrentWaybillViewModel" />
+
+    </data>
+
+    <LinearLayout
+            android:id="@+id/clCustomerMark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <ImageView
+                android:id="@+id/ivStageWork"
+                style="@style/imageViewStage"
+                android:src="@drawable/ic_stage_work"
+                tools:ignore="ContentDescription" />
+
+        <TextView
+                android:id="@+id/tvCustomerMarkTitle"
+                style="@style/textViewTitle"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_customer_mark_title" />
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilContactPerson"
+                style="@style/textInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorText="@{customerMarkViewModel.formState.contactPersonError}">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etContactPerson"
+                    style="@style/editTextField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/tv_contact_person_label"
+                    android:inputType="text"
+                    android:text="@{customerMarkViewModel.currentCustomerDoc.contactPerson}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilContactPersonPosition"
+                style="@style/textInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorText="@{customerMarkViewModel.formState.contactPersonPositionError}">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etContactPersonPosition"
+                    style="@style/editTextField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/tv_contact_person_position_label"
+                    android:inputType="text"
+                    android:text="@{customerMarkViewModel.currentCustomerDoc.contactPersonPosition}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilOdometerArrival"
+                style="@style/textInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorText="@{customerMarkViewModel.formState.odometerArrivalError}">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etOdometerArrival"
+                    style="@style/editTextField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/tv_odometer_arrival_to_customer_label"
+                    android:inputType="number"
+                    android:text="@{customerMarkViewModel.currentCustomerDoc.odometerStart.toString()}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilOdometerDeparture"
+                style="@style/textInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorText="@{customerMarkViewModel.formState.odometerDepartureError}">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etOdometerDeparture"
+                    style="@style/editTextField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/tv_odometer_departure_from_customer_label"
+                    android:inputType="number"
+                    android:text="@{customerMarkViewModel.currentCustomerDoc.odometerFinish.toString()}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilMachineKilometers"
+                style="@style/textInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorText="@{customerMarkViewModel.formState.machineKilometersError}">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etMachineKilometers"
+                    style="@style/editTextField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/tv_machine_kilometers_label"
+                    android:inputType="number"
+                    android:text="@{customerMarkViewModel.currentCustomerDoc.executedDistance.toString()}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilTravelTime"
+                style="@style/textInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorText="@{customerMarkViewModel.formState.travelTimeError}">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTravelTime"
+                    style="@style/editTextField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/tv_travel_time_label"
+                    android:inputType="time"
+                    app:formattedTime="@{customerMarkViewModel.currentCustomerDoc.executedTime}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilAdditionalEquipment"
+                style="@style/textInputLayoutDisabled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etAdditionalEquipment"
+                    style="@style/editTextFieldDisabled"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/tv_additional_equipment_title"
+                    android:text="@{customerMarkViewModel.equipmentGroupName}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilAdditionalEquipmentWorkingTime"
+                style="@style/textInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorText="@{customerMarkViewModel.formState.additionalEquipmentWorkingTimeError}">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etAdditionalEquipmentWorkingTime"
+                    style="@style/editTextField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/tv_additional_equipment_working_time_label"
+                    android:inputType="time"
+                    app:formattedTime="@{customerMarkViewModel.currentCustomerDoc.executedEquipmentTime}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilCustomerName"
+                style="@style/textInputLayoutDisabled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCustomerName"
+                    style="@style/editTextFieldDisabled"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/tv_customer_name_label"
+                    android:singleLine="false"
+                    android:text="@{customerMarkViewModel.currentCustomerDoc.customerName}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilStartWorkDateTime"
+                style="@style/textInputLayoutDisabled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etStartWorkDateTime"
+                    style="@style/editTextFieldDisabled"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/tv_date_to_start_work_label"
+                    app:formattedDateTime="@{customerMarkViewModel.currentCustomerDoc.startDate}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilEndWorkDateTime"
+                style="@style/textInputLayoutDisabled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etEndWorkDateTime"
+                    style="@style/editTextFieldDisabled"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/tv_date_to_end_work_label"
+                    app:formattedDateTime="@{customerMarkViewModel.currentCustomerDoc.endDate}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTrailer"
+                style="@style/editTextFieldDisabled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:enabled="false"
+                android:text="@string/tv_trailer_was_used"
+                android:visibility="@{customerMarkViewModel.currentCustomerDoc.trailerUsed}" />
+
+        <Button
+                android:id="@+id/btnSubscribe"
+                style="@style/buttonConfirm"
+                android:text="@string/btn_subscribe"
+                app:isEnabled="@{customerMarkViewModel.formState.isDataValid}" />
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="CurrentCustomerDocInfoFragmentBinding">
+
+        <variable
+                name="currentCustomerDocViewModel"
+                type="com.tetron.waybill.viewmodel.CurrentCustomerDocViewModel"/>
+
+        <variable
+                name="currentWaybillViewModel"
+                type="com.tetron.waybill.viewmodel.CurrentWaybillViewModel"/>
+
+    </data>
+
+    <LinearLayout
+            android:id="@+id/llInformationAboutWaybill"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/tvInformationAboutWaybillTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_text_element_margin"
+                android:text="@string/tv_information_about_waybill_title"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:textAllCaps="true"/>
+
+        <TextView
+                android:id="@+id/tvCustomerNameLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_text_element_margin"
+                android:background="@android:color/holo_blue_dark"
+                android:text="@string/tv_customer_name_label"
+                android:textStyle="bold"
+                android:gravity="start"/>
+
+        <TextView
+                android:id="@+id/tvCustomerName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_text_element_margin"
+                android:text="@{currentCustomerDocViewModel.currentCustomerDoc.customerName}"
+                android:gravity="start"/>
+
+        <TextView
+                android:id="@+id/tvCustomerDepartmentLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_blue_dark"
+                android:layout_margin="@dimen/default_text_element_margin"
+                android:text="@string/tv_customer_department_label"
+                android:textStyle="bold"
+                android:gravity="start"/>
+
+        <TextView
+                android:id="@+id/tvCustomerDepartment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_text_element_margin"
+                android:text="@{currentCustomerDocViewModel.currentCustomerDoc.customerDeptName}"
+                android:gravity="start"/>
+
+        <TextView
+                android:id="@+id/tvDateAndTimeOfServeLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_blue_dark"
+                android:layout_margin="@dimen/default_text_element_margin"
+                android:text="@string/tv_date_and_time_of_serve_label"
+                android:textStyle="bold"
+                android:gravity="start"/>
+
+        <TextView
+                android:id="@+id/tvDateAndTimeOfServe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_text_element_margin"
+                android:gravity="start"
+                android:textIsSelectable="true"
+                app:formattedDateTime="@{currentCustomerDocViewModel.currentCustomerDoc.startDate}"/>
+
+        <TextView
+                android:id="@+id/tvEndDateAndTimeLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_blue_dark"
+                android:layout_margin="@dimen/default_text_element_margin"
+                android:text="@string/tv_date_to_end_work_label"
+                android:textStyle="bold"
+                android:gravity="start"/>
+
+        <TextView
+                android:id="@+id/tvEndDateAndTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_text_element_margin"
+                android:gravity="start"
+                android:textIsSelectable="true"
+                app:formattedDateTime="@{currentCustomerDocViewModel.currentCustomerDoc.endDate}"/>
+
+        <TextView
+                android:id="@+id/tvAddressOfServeLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_blue_dark"
+                android:layout_margin="@dimen/default_text_element_margin"
+                android:text="@string/tv_address_of_serve_label"
+                android:textStyle="bold"
+                android:gravity="start"/>
+
+        <TextView
+                android:id="@+id/tvAddressOfServe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_text_element_margin"
+                android:text="@{currentCustomerDocViewModel.currentCustomerDoc.arrivalAddress}"
+                android:gravity="start"/>
+
+        <TextView
+                android:id="@+id/tvPurposeLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_blue_dark"
+                android:layout_margin="@dimen/default_text_element_margin"
+                android:text="@string/tv_purpose_label"
+                android:textStyle="bold"
+                android:gravity="start"/>
+
+        <TextView
+                android:id="@+id/tvPurpose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_text_element_margin"
+                android:text="@{currentCustomerDocViewModel.currentCustomerDoc.purpose}"
+                android:gravity="start"/>
+
+        <TextView
+                android:id="@+id/tvContactPersonLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_blue_dark"
+                android:layout_margin="@dimen/default_text_element_margin"
+                android:text="@string/tv_contact_person_label"
+                android:textStyle="bold"
+                android:gravity="start"/>
+
+        <TextView
+                android:id="@+id/tvContactPerson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_text_element_margin"
+                android:text="@{currentCustomerDocViewModel.currentCustomerDoc.contactPerson}"
+                android:gravity="start"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clContactPersonPhoneContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:id="@+id/tvContactPersonPhoneLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/holo_blue_dark"
+                    android:layout_margin="@dimen/default_text_element_margin"
+                    android:text="@string/tv_contact_phone_label"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                    android:id="@+id/tvContactPersonPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/default_text_element_margin"
+                    android:text="@{currentCustomerDocViewModel.currentCustomerDoc.contactPhone}"
+                    app:layout_constraintTop_toBottomOf="@+id/tvContactPersonPhoneLabel"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            <ImageView
+                    android:id="@+id/ivCall"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_phone"
+                    android:layout_margin="@dimen/default_text_element_margin"
+                    app:layout_constraintTop_toTopOf="@+id/tvContactPersonPhone"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvContactPersonPhone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:ignore="ContentDescription"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</layout>

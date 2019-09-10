@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="LoginActivityBinding">
+
+        <variable
+                name="loginViewModel"
+                type="com.tetron.waybill.viewmodel.LoginViewModel"/>
+
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.login.LoginActivity"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <ProgressBar
+            android:id="@+id/pbLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:visibility="@{safeUnbox(loginViewModel.loginFormState.isChecking), default=gone}"
+            app:layout_constraintStart_toStartOf="@+id/tilPassword"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tilPassword"
+            app:layout_constraintBottom_toBottomOf="@+id/ivLogo"
+            />
+
+    <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/logo_resoursetrans"
+            tools:ignore="ContentDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tilUsername"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilUsername"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/et_hint_username"
+                android:digits="@string/allowed_characters"
+                android:longClickable="false"
+                android:singleLine="true"
+                android:text="@string/mock_user"
+                android:maxLines="1"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            app:passwordToggleEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guidelineHorizontal">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/et_hint_password"
+                android:digits="@string/allowed_characters"
+                android:longClickable="false"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:inputType="textPassword"
+                android:text="@string/mock_pwd"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+            android:id="@+id/btnLogin"
+            android:enabled="@{loginViewModel.loginFormState.isDataValid}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="64dp"
+            android:text="@string/btn_sign_in"
+            android:textAllCaps="false"
+            android:onClick="@{() -> loginViewModel.login(etUsername.getText().toString(), etPassword.getText().toString())}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilPassword"
+            app:layout_constraintVertical_bias="0.2"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
