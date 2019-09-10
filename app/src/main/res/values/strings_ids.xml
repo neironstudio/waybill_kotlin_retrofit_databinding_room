@@ -1,21 +1,21 @@
 <resources>
     <!--1C web -->
-    <string name="API_BASE_URL_1C" translatable="false">https://waybill.rt24.ru</string>-->
-    <string name="API_USER_NAME1C" translatable="false">webuser</string>
-    <string name="API_USER_PASSWORD1C" translatable="false">1</string>
+    <string name="API_BASE_URL_1C" translatable="false">https://.ru</string>-->
+    <string name="API_USER_NAME1C" translatable="false">user</string>
+    <string name="API_USER_PASSWORD1C" translatable="false">userpass</string>
 
-    <string name="mock_user" translatable="false">TestDriver</string>
-    <string name="mock_pwd" translatable="false">123</string>
+    <string name="mock_user" translatable="false">testUsert</string>
+    <string name="mock_pwd" translatable="false">12345</string>
 
     <!-- osrm  -->
-    <string name="API_BASE_URL_OSRM" translatable="false">http://91.242.34.140:5000</string>
-    <string name="API_USER_NAME" translatable="false">authenticator</string>
-    <string name="API_USER_PASSWORD" translatable="false">mysecretpassword</string>
+    <string name="API_BASE_URL_OSRM" translatable="false">http://</string>
+    <string name="API_USER_NAME" translatable="false">username</string>
+    <string name="API_USER_PASSWORD" translatable="false">password</string>
 
     <!--waybill-->
-    <string name="API_BASE_URL_WAYBILL" translatable="false">http://91.242.34.140:3000</string>
+    <string name="API_BASE_URL_WAYBILL" translatable="false">http://</string>
     <string name="AUT_HEADER_NAME_WAY_BILL_SERVER" translatable="false">Authorization</string>
-    <string name="VALUE_HEADER_WAY_BILL_SERVER" translatable="false">Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidG9kb191c2VyIn0.yrW9rUF-2lWFIRij64QoySonuFYGFqnURbCLfOFUGvw</string>
+    <string name="VALUE_HEADER_WAY_BILL_SERVER" translatable="false">headre</string>
 
     <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
 
