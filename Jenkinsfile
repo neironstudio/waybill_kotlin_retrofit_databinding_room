@@ -66,9 +66,7 @@ pipeline {
 
         /*TODO: email
         failure {
-          mail to:"a.petrov@resourcetranse.ru,d.bardin@tetron.ru,a.antomonov@tetron.ru",
-          subject:"FAILURE: ${currentBuild.fullDisplayName}",
-          body: "There are some problems with Waybill Pipeline build."
+
         }*/
       }
   }
